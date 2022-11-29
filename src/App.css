@@ -12,6 +12,19 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 40px;
+  margin: 0;
+}
+
+.instructions {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+  text-align: center;
 }
 
 .die {
@@ -24,6 +37,7 @@ main {
   width: 45px;
   height: 50px;
   cursor: pointer;
+  border: none;
   font-weight: 700;
   font-size: 21px;
   color: #2b283a;
@@ -31,12 +45,12 @@ main {
 }
 
 .die:hover {
-  transform: translateY(4px);
+  transform: translateY(2px);
   transition: all 400ms ease-in-out;
 }
 
 .die:active {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   transition: all 400ms ease-in-out;
 }
 
@@ -47,4 +61,30 @@ main {
   width: 80%;
   justify-content: space-around;
   grid-template-rows: auto auto;
+}
+
+.roll-dice {
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 17.384px;
+  color: #ffff;
+  background: #5035ff;
+  box-shadow: 0 4px 8px #0000002e;
+  border-radius: 4px;
+  padding: 10px 20px;
+  width: 200px;
+  cursor: pointer;
+  border: none;
+  transition: all 100ms ease-in-out;
+}
+
+.roll-dice:active {
+  box-shadow: inset 5px 5px 10px -3px #000000b3;
+  transition: all 100ms ease-in-out;
+}
+
+.hold-die {
+  background-color: #59e391;
+  box-shadow: 0 2px 2px #00000026;
+  border-radius: 4px;
 }
