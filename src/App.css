@@ -1,3 +1,9 @@
 .app {
   text-align: center;
 }
+
+main {
+  border-radius: 5px;
+  background-color: #ffff;
+  min-height: 80vh;
+}
