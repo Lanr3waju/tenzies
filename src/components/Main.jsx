@@ -4,7 +4,7 @@ import Die from './Die';
 export default function Main() {
   return (
     <main>
-      <div>
+      <div className="dice">
         <Die value={1} />
         <Die value={2} />
         <Die value={3} />

@@ -1,9 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
 .app {
   text-align: center;
 }
 
 main {
+  font-family: Karla, sans-serif;
   border-radius: 5px;
-  background-color: #ffff;
+  background-color: #f5f5f5;
   min-height: 80vh;
+}
+
+.die {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffff;
+  box-shadow: 0 2px 2px #00000026;
+  border-radius: 4px;
+  width: 36px;
+  height: 38px;
+  padding: 12px 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 21px;
+  color: #2b283a;
+  transition: all 400ms ease-in-out;
+}
+
+.die:hover {
+  transform: translateY(4px);
+  transition: all 400ms ease-in-out;
+}
+
+.die:active {
+  transform: translateY(-4px);
+  transition: all 400ms ease-in-out;
+}
+
+.dice {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  row-gap: 20px;
+  grid-template-rows: auto auto;
+  padding: 20px;
 }
