@@ -2,7 +2,7 @@
 
 > This is a tenzies game application built with react.js.
 
-![screenshot](./src/)
+![screenshot](./src/img/tenzies.png)
 
 It utilizes reacts Class components to function and implement its various features.
 
