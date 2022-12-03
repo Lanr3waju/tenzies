@@ -1,3 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
 .app {
   text-align: center;
+}
+
+main {
+  background-color: #8b4ad6;
+  padding: 20px;
+  transition: all 300ms ease-in-out;
+}
+
+.main {
+  font-family: Poppins, sans-serif;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: all 300ms ease-in-out;
+}
+
+.title {
+  font-size: 40px;
+  margin: 5px;
+}
+
+.instructions {
+  font-weight: 400;
+  margin-top: 0;
+  text-align: left;
+  padding: 8px;
+}
+
+.die {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffff;
+  box-shadow: 0 2px 2px #00000026;
+  border-radius: 4px;
+  width: 45px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+  font-size: 21px;
+  color: #2b283a;
+  transition: all 400ms ease-in-out;
+}
+
+.die:hover {
+  transform: translateY(2px);
+  transition: all 400ms ease-in-out;
+}
+
+.die:active {
+  transform: translateY(-2px);
+  transition: all 400ms ease-in-out;
+}
+
+.dice {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  row-gap: 20px;
+  width: 80%;
+  justify-content: space-around;
+  grid-template-rows: auto auto;
+}
+
+.roll-dice {
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 17.384px;
+  color: #ffff;
+  background: #5035ff;
+  box-shadow: 0 4px 8px #0000002e;
+  border-radius: 4px;
+  padding: 10px 20px;
+  width: 200px;
+  cursor: pointer;
+  border: none;
+  transition: all 100ms ease-in-out;
+}
+
+.roll-dice:active {
+  box-shadow: inset 5px 5px 10px -3px #000000b3;
+  transition: all 100ms ease-in-out;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-bottom: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 400ms;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #113c5e;
+  transition: 400ms;
+}
+
+input:checked + .slider {
+  background-color: #113c5e;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider::before {
+  transform: translateX(15px);
+  box-shadow: 7px 1px 0 0 #ffff;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.dark-section {
+  background-color: #0b2434;
+  color: #f5f5f5;
+  transition: all 300ms ease-in-out;
+}
+
+.dark-main {
+  background-color: #050f14;
+  transition: all 300ms ease-in-out;
+}
+
+.hold-die {
+  background-color: #59e391;
+  box-shadow: 0 2px 2px #00000026;
+  border-radius: 4px;
+}
+
+.dark-die {
+  background-color: #050f14;
+  color: #f5f5f5;
+  box-shadow: 2px 2px #f5f5f5;
+}
+
+.dice-icon {
+  width: 100px;
+  transition: all 400ms linear;
+}
+
+.rotate-dice {
+  transform: rotate(360deg);
+  transition: all 400ms linear;
+}
+
+@media screen and (max-width: 400px) {
+  .dice {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 20px;
+    width: 80%;
+    justify-content: space-around;
+    grid-template-rows: auto auto auto auto auto;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .dice-icon {
+    width: 80px;
+  }
 }
