@@ -191,4 +191,12 @@ input:checked + .slider::before {
     justify-content: space-around;
     grid-template-rows: auto auto auto auto auto;
   }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .dice-icon {
+    width: 80px;
+  }
 }
