@@ -2,6 +2,9 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 import Confetti from 'react-confetti';
 import Die from './Die';
+import ToggleBtn from './ToggleBtn';
+import darkDice from '../img/dice-black.png';
+import whiteDice from '../img/dice-white.png';
 
 export default function Main() {
   const generateRandomNo = () => ({
@@ -20,6 +23,7 @@ export default function Main() {
 
   const [diceArr, setDiceArr] = React.useState(allNewDice());
   const [tenzies, setTenzies] = React.useState(false);
+  const [isDark, setIsDark] = React.useState(false);
 
   React.useEffect(() => {
     const initialValue = diceArr[0].value;
@@ -38,7 +42,16 @@ export default function Main() {
   }
 
   const dieEl = diceArr.map(({ value, id, isHeld }) => (
-    <Die held={isHeld} value={value} id={id} holdDice={() => holdDice(id)} key={id} />));
+    <Die
+      isDark={isDark}
+      held={isHeld}
+      value={value}
+      id={id}
+      holdDice={() => holdDice(id)}
+      key={id}
+
+    />
+  ));
 
   const newGame = ({ target }) => {
     if (target.textContent === 'New Game') {
@@ -47,25 +60,39 @@ export default function Main() {
     }
   };
 
+  const handleIsDark = () => {
+    setIsDark((prevState) => !prevState);
+  };
+
   const rollDice = (event) => {
     setDiceArr((oldDiceArr) => oldDiceArr.map((die) => (die.isHeld ? die : generateRandomNo())));
     newGame(event);
   };
 
   return (
-    <main>
-      {tenzies && <Confetti />}
-      <h1 className="title">Tenzies</h1>
-      <p className="instructions">
-        Roll until all dice are the same.
-        Click each die to freeze it at its current value between rolls.
-      </p>
-      <div className="dice">
-        {dieEl}
-      </div>
-      <button type="button" className="roll-dice" onClick={rollDice}>
-        {tenzies ? 'New Game' : 'Roll'}
-      </button>
+    <main className={isDark ? 'dark-main' : ''}>
+      <ToggleBtn
+        handleIsDark={handleIsDark}
+      />
+      <section className={isDark ? 'main dark-section' : 'main'}>
+        {tenzies && <Confetti />}
+        <h1 className="title">
+          Tenzies
+          {' '}
+          <img alt="pair of dice" className={isDark ? 'dice-icon rotate-dice' : 'dice-icon'} src={isDark ? whiteDice : darkDice} />
+          {' '}
+        </h1>
+        <p className="instructions">
+          Roll until all dice are the same.
+          Click each die to freeze it at its current value between rolls.
+        </p>
+        <div className="dice">
+          {dieEl}
+        </div>
+        <button type="button" className="roll-dice" onClick={rollDice}>
+          {tenzies ? 'New Game' : 'Roll'}
+        </button>
+      </section>
     </main>
   );
 }
