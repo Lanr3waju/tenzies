@@ -1,10 +1,8 @@
 # Tenzi3s
 
-> This is a tenzies game application built with react.js.
+> This is a tenzies game application built with react.js. The Tenzies web app game brings the excitement and fun of the traditional dice game to the digital world. Players can enjoy the game through a user-friendly interface that provides a virtual game board, dice, and scoring system. The game mechanics follow the familiar rules of Tenzies, where players take turns rolling five dice and strategically set aside the ones that contribute to their score. The web app provides visual feedback to highlight successful combinations and scoring opportunities.
 
 ![screenshot](./src/img/tenzies.png)
-
-It utilizes reacts Class components to function and implement its various features.
 
 ## Built With
 
